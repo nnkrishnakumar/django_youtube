@@ -1,0 +1,16 @@
+why we are learning django
+pip install django
+
+Prerequisite
+HTML
+CSS
+JS
+Python
+
+
+what is django
+
+
+configure django with vscode :
+
+
