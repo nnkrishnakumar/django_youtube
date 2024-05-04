@@ -1,16 +1,18 @@
-why we are learning django
-pip install django
+terminal: 
 
-Prerequisite
-HTML
-CSS
-JS
-Python
+python --version             # to check python version available or not
 
+pip install virtualenv
 
-what is django
+virtualenv venv
 
 
-configure django with vscode :
+cd venv\Scripts
+activate
 
 
+how to create a project:
+-----------------------
+single project with 1 app
+
+step1: django-admin startproject aimartians
