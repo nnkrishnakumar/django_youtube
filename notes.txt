@@ -16,3 +16,9 @@ how to create a project:
 single project with 1 app
 
 step1: django-admin startproject aimartians
+
+
+request()
+render()
+include()
+HttpResponse()
