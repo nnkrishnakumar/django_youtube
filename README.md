@@ -167,3 +167,73 @@ python code
 
 
 By visiting http://127.0.0.1:8000/blog/, Django will redirect the request to the blog app to handle further URL routing based on its own urls.py.
+
+# 20 Django Project with Multiple Applications
+
+## step1: First, let's create the Django project:
+
+    Python code:
+        django-admin startproject aimartians3
+        cd aimartians3
+## step2: Now, let's create multiple Django applications within this project:
+
+    Python code:
+        python manage.py startapp products
+        python manage.py startapp orders
+        python manage.py startapp users
+
+This will create three applications named products, orders, and users within the "aimartians3" project directory.
+
+## step3: Next, let's configure the project settings to include these applications:
+
+    Python code:
+    # aimartians3/settings.py
+    INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        'products',   # Add your applications here
+        'orders',
+        'users',
+    ]
+
+=========================================================
+# What is Templates in Django:
+
+*   A template in Django is a file containing a mix of HTML and special syntax that allows you to dynamically generate web pages by inserting variables, loops, conditionals, and other logic into the HTML. Templates help in separating the design from the code logic in web applications.
+
+## Advantages of using templates in Django:
+
+*   Separation of Concerns: Templates allow you to separate the presentation layer (HTML) from the application logic (Python code), promoting a clean and maintainable codebase.
+
+*   Code Reusability: Templates enable you to reuse common HTML structure across multiple pages, reducing duplication of code and making it easier to update the design of your website.
+*   Ease of Collaboration: Since templates use standard HTML with Django template language, designers and developers can work on the frontend and backend independently, facilitating collaboration in a team environment.
+*   Dynamic Content: With templates, you can easily generate dynamic content by inserting variables, loops, and conditionals into your HTML, allowing you to display data from your Django models dynamically.
+*   Performance: Django's template engine is optimized for performance, allowing you to render complex templates efficiently, which contributes to faster page load times.
+
+## Disadvantages of using templates in Django:
+
+*   Limited Flexibility: While Django's template language is powerful, it may not offer the same flexibility and features as frontend JavaScript frameworks like React or Vue.js for building highly interactive user interfaces.
+
+*   Learning Curve: Learning Django's template language and understanding its syntax may require some initial effort for developers who are new to the framework, especially if they are accustomed to working with other templating systems or frontend technologies.
+*   Security Risks: Improper use of templates can lead to security vulnerabilities such as Cross-Site Scripting (XSS) if user input is not properly sanitized or escaped. Developers need to be vigilant and follow best practices to prevent such risks.
+*   Performance Overhead: Although Django's template engine is optimized, rendering complex templates with a large number of variables or nested loops can still introduce performance overhead, especially in high-traffic applications.
+*   Template Maintenance: As the application grows, managing and maintaining a large number of templates can become challenging, especially if they are not organized properly. It's essential to follow a consistent naming and directory structure to keep templates manageable.
+
+# How to configuer templates in django project?
+
+Step 1: create a django project:
+Step 2: create “templates” folder
+Step 3:configure templates folder into settings.py file 
+Python code:
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Path to your project-wide templates directory
+        'APP_DIRS': True,
+        },
+] 
+
