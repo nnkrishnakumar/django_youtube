@@ -237,3 +237,64 @@ TEMPLATES = [
         },
 ] 
 
+
+# How to configure templates at app level
+
+## Configuring templates at the app level in Django involves several steps:
+
+*   Create a Templates Directory: Within your Django app directory, create a directory named templates. This is where you'll store your app-specific templates.
+*   Define Templates: Inside the templates directory, create HTML files for your templates. These files will contain the markup and DTL (Django Template Language) code to generate the desired output.
+*   Update Settings: In your Django project's settings file (settings.py), make sure the APP_DIRS setting is set to True. This tells Django to look for templates within each app's templates directory.
+*   Render Templates: In your views, use Django's render function to render the appropriate template. You'll need to specify the template name, which is relative to the templates directory of your app.
+
+
+# 24 Advantage and disadvantage of templates in app level and project level
+
+## App-Level Templates:
+### Advantages:
+
+*   Modularity: Self-contained templates for each app.
+*   Organization: Clear organization, especially in larger projects.
+*   Customization: Templates tailored to each app's needs.
+
+### Disadvantages:
+
+*   Duplication: Risk of duplicated code across apps.
+*   Dependency: Tightly coupled with app structure.
+
+## Project-Level Templates:
+
+### Advantages:
+
+*   Centralization: Shared templates for consistency.
+*   Global Scope: Access to data from multiple apps.
+*   Flexibility: Easier management and organization.
+
+### Disadvantages:
+
+*   Coupling: Tighter coupling between project parts.
+*   Complexity: Handling many templates can get unwieldy.
+*   Conflicts: Changes may affect multiple apps, leading to conflicts.
+
+
+
+# How to configure templates at app level
+
+*   The URL dispatcher in Django maps incoming web requests to the appropriate view functions or classes in your application based on defined URL patterns. It's configured in the urls.py files of your Django project and apps, directing traffic to specific parts of your application's logic.
+
+
+# 26 What is DTL and use
+
+## DTL stands for Django Template Language. It's a templating language used within Django templates to generate dynamic HTML content. DTL provides a way to embed Python-like code directly into HTML templates, allowing developers to create dynamic web pages with ease.
+
+Here's how DTL is used:
+
+*   Template Syntax: DTL uses special template syntax enclosed within {% %} for tags and {{ }} for variables. These tags and variables are processed by Django's template engine when rendering the template.
+
+*   Rendering Variables: Variables enclosed within {{ }} are replaced with their corresponding values when the template is rendered. These variables can represent data passed from views or context processors.
+
+*   Template Tags: Tags enclosed within {% %} perform control logic, iteration, and other template operations. Django provides a wide range of built-in template tags for common tasks like loops, conditional statements, including other templates, and more.
+
+*   Filters: Filters can be applied to variables within the {{ }} syntax to modify their output. Filters provide functionalities like formatting dates, manipulating strings, and more.
+
+*   Template Inheritance: DTL supports template inheritance, allowing developers to create a base template with common elements (e.g., header, footer) and extend it in other templates. This promotes code reusability and maintains consistency across multiple pages.

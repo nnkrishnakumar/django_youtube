@@ -23,5 +23,3 @@ render()
 include()
 HttpResponse()
 
-
-
